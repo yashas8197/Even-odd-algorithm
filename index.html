@@ -16,20 +16,14 @@
   <script>
     const numberList = document.querySelector('#numberList')
 
-    function isOdd(num) {
-      if (num % 2 !== 0) {
-        return true
-      }
-    }
+
+    const isOdd = (num) => num % 2 !== 0
 
     let numberArray = []
     function generateNumbers(num) {
       for (let i = 0; i <= num; i++) {
-        if (isOdd(i)) {
-          numberArray.push(`Odd: ${i * i}`)
-        } else {
-          numberArray.push(`Even: ${i * i}`)
-        }
+        let type = isOdd(i) ? "Odd: " : "Even: "
+        numberArray.push(`${type}: ${i * i}`)
       }
       return numberArray
     }
